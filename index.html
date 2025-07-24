@@ -10,6 +10,7 @@
         <link rel="canoncal" href="https://forgefacethegreat.github.io/Game-Knight/">
         <link rel="manifest" href="/game-knight/manifest.webmanifest">
         <link rel="stylesheet" type="text/css" href="mainStyle.css">
+        <!-- <script type="text/javascript" src="scripts/scoreBoard.js"></script> -->
     </head>
     
     <body>
@@ -22,9 +23,16 @@
             }
         </script>
 
-        <div class="scoreBoard">
-            <P>Score Board</P>
-            <li></li>
+        <div id="addPlayersForm">
+            <P>Add Players</P>
+            <!-- <input type="text" id="playerName" name="playerName" placeholder="Player Name"> -->
+            <input id="playerName" placeholder="Player Name">
+            <button id="addButton">add</button>
+            <script src="scripts/scoreBoard.js"></script>
+
         </div>
+        
+        <p>Players</p>
+        <p id="playerList"></p>
     </body>
 </html>
