@@ -3,11 +3,11 @@
     "short_name": "GK",
     "description": "Game Knight PWA",
 
-    "scope": "/Game Knight/",
-    "start_url": "/Game Knight/",
+    "scope": "/game-knight/",
+    "start_url": "/game-knight/",
 
-    "background_color": "#c20808",
-    "theme_color": "#c20808",
+    "background_color": "rgb(88, 88, 88)",
+    "theme_color": "rgb(88, 88, 88)",
 
     "display": "standalone",
 
