@@ -1,7 +1,7 @@
 {
-    "name": "Github Pages PWA",
-    "short_name": "GHPPWA",
-    "description": "Progressive Web App Example to do super cool stuff",
+    "name": "Game Knight",
+    "short_name": "GK",
+    "description": "Game Knight PWA",
 
     "scope": "/Game Knight/",
     "start_url": "/Game Knight/",
