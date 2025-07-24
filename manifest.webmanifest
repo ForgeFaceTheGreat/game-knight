@@ -1,6 +1,6 @@
 {
     "name": "Game Knight",
-    "short_name": "GK",
+    "short_name": "Game Knight",
     "description": "Game Knight PWA",
 
     "scope": "/game-knight/",
@@ -13,7 +13,7 @@
 
     "icons": [
         {
-            "src": "/img/icon.png",
+            "src": "/game-knight/img/icon.png",
             "type": "image/png",
             "sizes": "325x325"
         }
