@@ -5,7 +5,7 @@ var GHPath = '/Game Knight';
 var APP_PREFIX = 'GK';
 
 // ****Change version number any time any files are changed or else****
-var VERSION = 'version_0.0.0.0';
+var VERSION = 'version_0.0.0.1';
 
 var URLS = [
     `${GHPath}/`,

@@ -3,3 +3,37 @@ body {
     background-color: slategray;
     text-align: center;
 }
+
+/* Scorboard */
+table {
+    width: 100%;
+
+    #idplayer {
+        text-align: left;
+        float: left;
+        margin-left: 30%;
+    }
+
+    #idscore {
+        text-align: right;
+        float: right;
+        margin-right: 30%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    table {
+         #idplayer {
+            text-align: left;
+            float: left;
+            margin-left: 10%;
+        }
+    
+        #idscore {
+            text-align: right;
+            float: right;
+            margin-right: 10%;
+        }
+    }
+
+}
