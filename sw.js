@@ -5,13 +5,13 @@ var GHPath = '/Game Knight';
 var APP_PREFIX = 'GK';
 
 // ****Change version number any time any files are changed or else****
-var VERSION = 'version_0.0.0.1';
+var VERSION = 'version_0.0.0.2';
 
 var URLS = [
     `${GHPath}/`,
     `${GHPath}/index.html`,
-    `${GHPath}/style.css`
-    `${GHPath}/scripts/app.js`
+    `${GHPath}/mainStyle.css`
+    `${GHPath}/scripts/scorBoard.js`
 ]
 
 // https://christianheilmann.com/2022/01/13/turning-a-github-page-into-a-progressive-web-app/
