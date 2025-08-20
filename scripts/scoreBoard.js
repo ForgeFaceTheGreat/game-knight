@@ -20,10 +20,17 @@ input.addEventListener("keypress", function(pressedKey) {
 });
         
 document.getElementById("addButton").onclick = function() {
+    let playerIDElement = document.getElementById("playerNameInput");
     let playerName = document.getElementById("playerNameInput").value;
 
     // Kills submission if invalid player name
-    if (!playerValidation(playerName)) { return; }
+    if (!playerValidation(playerIDElement)) { return; }
+
+    // Uppercases first letter and lowers the rest
+    playerName = caseinator(playerName);
+
+    // Checks if player already exists
+    if (!playerExists(playerName, playerIDElement)) { return; }
 
     // Construct a player
     players.push({ name: playerName, score: 0 });
@@ -32,7 +39,7 @@ document.getElementById("addButton").onclick = function() {
     printScoreBoard();
 
     // Resets text box
-    document.getElementById("playerNameInput").value = "";
+    playerIDElement.value = "";
 }
 
 // Prints the Players and their scores
@@ -43,12 +50,63 @@ function printScoreBoard() {
         string += "<tr><td id='idplayer'>" + players[i].name + "</td><td id='idscore'>" + players[i].score + "</td></tr>";
     }
     document.getElementById("playerList").innerHTML = string;
+    document.getElementById("numPlayers").innerHTML = players.length + " Player";
 }
 
-// Checks if the Player Name is at least 1 character
+// Checks if the Player Name is valid
 function playerValidation(name) {
-    if (name.length >= 1) {
-        return true;
+    var pos = true;
+
+    // Remove error messages
+    name.classList.remove("error", !pos);
+    document.getElementById("lengthError").style.display = "none";
+    document.getElementById("charError").style.display = "none";
+    document.getElementById("existsError").style.display = "none";
+    document.getElementById("noError").style.display = "block";
+
+    // name too short or too long
+    if (name.value.length < 3 || name.value.length > 16) {
+        pos = false;
+        name.classList.add("error", !pos);
+        document.getElementById("lengthError").style.display = "block";
+        document.getElementById("noError").style.display = "none";
     }
-    return false;
+
+    // name can only be letters and numbers
+    const pattern = /^[a-zA-Z0-9]+$/;
+    if (!pattern.test(name.value)) {
+        pos = false;
+        name.classList.add("error", !pos);
+        document.getElementById("charError").style.display = "block";
+        document.getElementById("noError").style.display = "none";
+    }
+
+    return pos;
+}
+
+// Checks if name already exists
+function playerExists(name, nameID) {
+    for (let i = 0; i < players.length; i++) {
+        if (name === players[i].name) {
+            pos = false;
+            nameID.classList.add("error", !pos);
+            document.getElementById("existsError").style.display = "block";
+            document.getElementById("noError").style.display = "none";
+            
+            return false;
+        }
+    }
+
+    return true;
+}
+
+// Uppercases first letter and lowers the rest
+function caseinator(name) {
+    var newName = name[0].toUpperCase();
+
+    for (let i = 1; i < name.length; i++) {
+        newName += name[i].toLowerCase();
+    }
+
+    return newName;
 }

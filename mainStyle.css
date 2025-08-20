@@ -4,6 +4,38 @@ body {
     text-align: center;
 }
 
+/* Add Player Form */
+#addPlayersForm {
+    #lengthError {
+        color: #ff0000;
+        display: none;
+    }
+    
+    #charError {
+        color: #ff0000;
+        display: none;
+    }
+
+    #existsError {
+        color: #ff0000;
+        display: none;
+    }
+    
+    #noError {
+        display: block;
+    }
+
+    #playerNameInput {
+        outline: none;
+    }
+    
+    .error {
+            border: 1px solid #ff0000 !important;
+            background-color: #ffb2b2;
+    }
+}
+
+
 /* Scorboard */
 table {
     width: 100%;
@@ -22,7 +54,7 @@ table {
 }
 
 @media only screen and (max-width: 600px) {
-    table {
+    .playerList {
          #idplayer {
             text-align: left;
             float: left;

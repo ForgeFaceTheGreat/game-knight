@@ -28,10 +28,15 @@
             <!-- <input type="text" id="playerName" name="playerName" placeholder="Player Name"> -->
             <input id="playerNameInput" placeholder="Player Name">
             <button id="addButton">add</button>
+            <div id="lengthError">names need to be 3-16 characters</div>
+            <div id="charError">names can only be letters & numbers<br><br><br></div>
+            <div id="existsError">this player already exists<br><br><br></div>
+            <div id="noError"><br><br><br></div>
             <script src="scripts/scoreBoard.js"></script>
         </div>
         
-        <p>Players</p>
+        <!-- <p>Players</p> -->
+        <div id="numPlayers"></div>
         <table id="playerList"></table>
     </body>
 </html>
