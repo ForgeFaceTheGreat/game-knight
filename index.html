@@ -10,7 +10,6 @@
         <link rel="canoncal" href="https://forgefacethegreat.github.io/Game-Knight/">
         <link rel="manifest" href="/game-knight/manifest.webmanifest">
         <link rel="stylesheet" type="text/css" href="mainStyle.css">
-        <!-- <script type="text/javascript" src="scripts/scoreBoard.js"></script> -->
     </head>
     
     <body>
@@ -19,13 +18,12 @@
 
         <script>
             if (navigator.serviceWorker) {
-                navigator.serviceWorker.register ('/game-knight/sw.js', {scope: '/game-knight/'})
+                navigator.serviceWorker.register('/game-knight/sw.js', {scope: '/game-knight/'})
             }
         </script>
 
         <div id="addPlayersForm">
             <P>Add Players</P>
-            <!-- <input type="text" id="playerName" name="playerName" placeholder="Player Name"> -->
             <input id="playerNameInput" placeholder="Player Name">
             <button id="addButton">add</button>
             <div id="lengthError">names need to be 3-16 characters</div>
@@ -38,5 +36,15 @@
         <!-- <p>Players</p> -->
         <div id="numPlayers"></div>
         <table id="playerList"></table>
+
+        <div id="cardHolder"></div>
+
+        <!-- <div class="card">
+            <p>Score</p>
+            <div class="cardStock">
+                <h4><b>Name</b></h4>
+                <div>Buttons</div>
+            </div>
+        </div> -->
     </body>
 </html>

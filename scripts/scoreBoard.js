@@ -35,22 +35,43 @@ document.getElementById("addButton").onclick = function() {
     // Construct a player
     players.push({ name: playerName, score: 0 });
 
-    // Prints Player name to screen
+    // Displays player cards for manipulating scores
+    printPlayerCards();
+
+    // Prints Player name and score to screen
     printScoreBoard();
 
     // Resets text box
     playerIDElement.value = "";
 }
 
+// Displays player cards for manipulating scores
+function printPlayerCards() {
+    let string = "";
+
+    for (let i = 0; i < players.length; i++) {
+        string += "<div class='card'>" +
+            "<p>" + players[i].score + "</p>" + 
+            "<div>Buttons</div>" +
+            "<div class='cardStock'>" +
+                "<h4><b>" + players[i].name + "</b></h4>" +
+            "</div>" +
+        "</div>";
+    }
+    document.getElementById("cardHolder").innerHTML = string;
+}
+
 // Prints the Players and their scores
 function printScoreBoard() {
     let string = "<th id='idplayer'>Players</th><th id='idscore'>Score</th>";
-
+    
+    // Displays player count
+    document.getElementById("numPlayers").innerHTML = players.length + " Player";
+    
     for (let i = 0; i < players.length; i++) {
         string += "<tr><td id='idplayer'>" + players[i].name + "</td><td id='idscore'>" + players[i].score + "</td></tr>";
     }
     document.getElementById("playerList").innerHTML = string;
-    document.getElementById("numPlayers").innerHTML = players.length + " Player";
 }
 
 // Checks if the Player Name is valid
