@@ -7,7 +7,7 @@
     "start_url": "/game-knight/",
 
     "background_color": "rgb(88, 88, 88)",
-    "theme_color": "rgb(88, 88, 88)",
+    "theme_color": "#354f52",
 
     "display": "standalone",
 

@@ -2,6 +2,7 @@ body {
     color: wheat;
     background-color: slategray;
     text-align: center;
+    font-size: 18px; /* Prevents auto-zoom */
 }
 
 /* Add Player Form */
@@ -82,24 +83,45 @@ table {
     margin: 1%;
     height: 140px;
     position: relative;
+
+    .num {
+        font-size: 250%;
+        height: 40%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .buttons {
+        height: 30%;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .cardStock {
+        height: 30%;
+        /* padding: 2px 16px; */
+        background-color: rgb(210, 210, 210);
+        color: #354f52;
+        border-radius: 5px;
+        /* position: absolute;
+        bottom: 0; */
+        width: 100%;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    background-color: rgb(214, 214, 214);
+    background-color: #3b595c;
+    /* background-color: rgb(214, 214, 214); */
     transition: transform 0.3s ease-in-out;
     transform: scale(1.1);
-}
-
-.cardStock {
-    height: 30%;
-    /* padding: 2px 16px; */
-    background-color: rgb(210, 210, 210);
-    color: #354f52;
-    border-radius: 5px;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
 }
 
 @media screen and (max-width: 900px) {

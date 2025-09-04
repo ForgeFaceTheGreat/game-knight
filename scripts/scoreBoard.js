@@ -45,16 +45,25 @@ document.getElementById("addButton").onclick = function() {
     playerIDElement.value = "";
 }
 
+// const scoreButtons = document.querySelectorAll('.scorButton');
+
+// scoreButtons.forEach(scoreQuery => scoreQuery.addEventListener('click', scoreEvent => {
+//     console.log(scoreEvent.target.getAttribute("id"));
+// }));
+
 // Displays player cards for manipulating scores
 function printPlayerCards() {
     let string = "";
 
     for (let i = 0; i < players.length; i++) {
         string += "<div class='card'>" +
-            "<p>" + players[i].score + "</p>" + 
-            "<div>Buttons</div>" +
+            "<div class='num'>" + players[i].score + "</div>" + 
+            "<div class='buttons'>" + 
+                "<button class='scoreButton' id='" + players[i].name + "' value='-200'>-1</button>" +
+                "<button class='scoreButton' id='" + players[i].name + "' value='100'>+1</button>" +
+            "</div>" +
             "<div class='cardStock'>" +
-                "<h4><b>" + players[i].name + "</b></h4>" +
+                players[i].name +
             "</div>" +
         "</div>";
     }
