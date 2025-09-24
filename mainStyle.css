@@ -7,6 +7,30 @@ body {
 
 /* Add Player Form */
 #addPlayersForm {
+    #addButton {
+        height: 50px;
+        font-size: large;
+        border: none;
+        border-radius: 5px;
+        background-color: #3b595c;
+        color: rgb(210, 210, 210);
+    }
+    
+    #playerNameInput {
+        height: 50px;
+        font-size: large;
+        outline: none;
+        border: none;
+        border-radius: 5px;
+        background-color: #3b595c;
+        color: rgb(210, 210, 210);
+    }
+
+    ::placeholder {
+        color: slategray;
+        vertical-align: bottom;
+    }
+
     #lengthError {
         color: #ff0000;
         display: none;
@@ -25,14 +49,9 @@ body {
     #noError {
         display: block;
     }
-
-    #playerNameInput {
-        outline: none;
-    }
     
     .error {
-            border: 1px solid #ff0000 !important;
-            background-color: #ffb2b2;
+            background-color: #5c3b3b !important;
     }
 }
 
@@ -78,10 +97,11 @@ table {
     border-radius: 5px;
     background-color: #354f52;
     color: wheat;
-    width: 14.6%;
+    /* width: 14.6%; */
     float: left;
     margin: 1%;
-    height: 140px;
+    height: 190px;
+    width: 190px;
     position: relative;
 
     .num {
@@ -93,23 +113,43 @@ table {
     }
 
     .buttons {
+        width: 100%;
         height: 30%;
-        font-weight: bold;
-        display: flex;
+        /* font-weight: bold; */
+        /* display: inline-block; */
         justify-content: center;
         align-items: center;
+        display: flex;
+
+        .scoreButton {
+            width: 25%;
+            height: 60%;
+            margin: 2%;
+            font-weight: bolder;
+            font-size: large;
+            border: none;
+            border-radius: 5px;
+            background-color: rgb(210, 210, 210);
+            color: #3b595c;
+        }
+
+        #neg {
+            color: #5c3b3d;
+        }
+
+        #pos {
+            color: #3b5c46;
+        }
     }
 
     .cardStock {
         height: 30%;
-        /* padding: 2px 16px; */
+        width: 100%;
         background-color: rgb(210, 210, 210);
         color: #354f52;
         border-radius: 5px;
-        /* position: absolute;
-        bottom: 0; */
-        width: 100%;
         font-weight: bold;
+        font-size: larger;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -119,10 +159,10 @@ table {
 .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
     background-color: #3b595c;
-    /* background-color: rgb(214, 214, 214); */
     transition: transform 0.3s ease-in-out;
     transform: scale(1.1);
 }
+
 
 @media screen and (max-width: 900px) {
     .card {
@@ -133,5 +173,11 @@ table {
 @media screen and (max-width: 600px) {
     .card {
         width: 48%;
+    }
+}
+
+@media screen and (max-width: 350px) {
+    .card {
+        width: 100%;
     }
 }

@@ -8,6 +8,9 @@ class player {
     }
 }
 
+var sVal = 1;
+var lVal = 5;
+
 // Grabs key inputs for the "Enter" key
 var input = document.getElementById("playerNameInput");
 
@@ -51,6 +54,20 @@ document.getElementById("addButton").onclick = function() {
 //     console.log(scoreEvent.target.getAttribute("id"));
 // }));
 
+function changeScore(dig, name) {
+    // alert(dig + " " + `${name}`);
+    for (let i = 0; i < players.length; i++) {
+        // alert(players[i].score);
+        if (name === players[i].name) {
+            players[i].score += dig;
+            // alert("asdfaf");
+            printAll();
+            return;
+        }
+    }
+    alert("Broken!");
+}
+
 // Displays player cards for manipulating scores
 function printPlayerCards() {
     let string = "";
@@ -59,8 +76,10 @@ function printPlayerCards() {
         string += "<div class='card'>" +
             "<div class='num'>" + players[i].score + "</div>" + 
             "<div class='buttons'>" + 
-                "<button class='scoreButton' id='" + players[i].name + "' value='-200'>-1</button>" +
-                "<button class='scoreButton' id='" + players[i].name + "' value='100'>+1</button>" +
+                "<button class='scoreButton' id='neg' onclick='changeScore(" + -lVal + ", `" + players[i].name + "`)'>" + -lVal + "</button>" +
+                "<button class='scoreButton' id='neg' onclick='changeScore(" + -sVal + ", `" + players[i].name + "`)'>" + -sVal + "</button>" +
+                "<button class='scoreButton' id='pos' onclick='changeScore(" + sVal + ", `" + players[i].name + "`)'>" + sVal + "</button>" +
+                "<button class='scoreButton' id='pos' onclick='changeScore(" + lVal + ", `" + players[i].name + "`)'>" + lVal + "</button>" +
             "</div>" +
             "<div class='cardStock'>" +
                 players[i].name +
@@ -81,6 +100,12 @@ function printScoreBoard() {
         string += "<tr><td id='idplayer'>" + players[i].name + "</td><td id='idscore'>" + players[i].score + "</td></tr>";
     }
     document.getElementById("playerList").innerHTML = string;
+}
+
+// Helper to print all printables
+function printAll() {
+    printPlayerCards();
+    printScoreBoard();
 }
 
 // Checks if the Player Name is valid
