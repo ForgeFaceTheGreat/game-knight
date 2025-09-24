@@ -1,8 +1,20 @@
+:root {
+    --thatGray: slategray;
+    --thatGreen: #3b595c;
+    --thatYellow: wheat;
+    --thatWhite: rgb(210, 210, 210);
+    --errorRed: #5c3b3b;
+    --shadow: rgba(0,0,0,0.2);
+    --negRed: #5c3b3d;
+    --posGreen: #3b5c46;
+}
+
 body {
-    color: wheat;
-    background-color: slategray;
+    color: var(--thatYellow);
+    background-color: var(--thatGray);
     text-align: center;
     font-size: 18px; /* Prevents auto-zoom */
+    margin: 0; /* Disables the weird crap that plagues browsers */
 }
 
 /* Add Player Form */
@@ -12,8 +24,8 @@ body {
         font-size: large;
         border: none;
         border-radius: 5px;
-        background-color: #3b595c;
-        color: rgb(210, 210, 210);
+        background-color: var(--thatGreen);
+        color: var(--thatWhite);
     }
     
     #playerNameInput {
@@ -22,27 +34,27 @@ body {
         outline: none;
         border: none;
         border-radius: 5px;
-        background-color: #3b595c;
-        color: rgb(210, 210, 210);
+        background-color: var(--thatGreen);
+        color: var(--thatWhite);
     }
 
     ::placeholder {
-        color: slategray;
+        color: var(--thatGray);
         vertical-align: bottom;
     }
 
     #lengthError {
-        color: #ff0000;
+        color: var(--errorRed);
         display: none;
     }
     
     #charError {
-        color: #ff0000;
+        color: var(--errorRed);
         display: none;
     }
 
     #existsError {
-        color: #ff0000;
+        color: var(--errorRed);
         display: none;
     }
     
@@ -51,7 +63,7 @@ body {
     }
     
     .error {
-            background-color: #5c3b3b !important;
+        background-color: var(--errorRed) !important;
     }
 }
 
@@ -92,11 +104,11 @@ table {
 
 /* Player Cards */
 .card {
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    box-shadow: 0 4px 8px 0 var(--shadow);
     transition: 0.3s;
     border-radius: 5px;
-    background-color: #354f52;
-    color: wheat;
+    background-color: var(--thatGreen);
+    color: var(--thatYellow);
     /* width: 14.6%; */
     float: left;
     margin: 1%;
@@ -129,23 +141,29 @@ table {
             font-size: large;
             border: none;
             border-radius: 5px;
-            background-color: rgb(210, 210, 210);
-            color: #3b595c;
+            background-color: var(--thatWhite);
+            color: var(--thatGreen);
+        }
+
+        .scoreButton:hover {
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+            transition: transform 0.1s ease-in-out;
+            transform: scale(1.1);
         }
 
         #neg {
-            color: #5c3b3d;
+            color: var(--negRed);
         }
 
         #pos {
-            color: #3b5c46;
+            color: var(--posGreen);
         }
     }
 
     .cardStock {
         height: 30%;
         width: 100%;
-        background-color: rgb(210, 210, 210);
+        background-color: var(--thatWhite);
         color: #354f52;
         border-radius: 5px;
         font-weight: bold;
@@ -155,14 +173,6 @@ table {
         align-items: center;
     }
 }
-
-.card:hover {
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
-    background-color: #3b595c;
-    transition: transform 0.3s ease-in-out;
-    transform: scale(1.1);
-}
-
 
 @media screen and (max-width: 900px) {
     .card {
@@ -180,4 +190,13 @@ table {
     .card {
         width: 100%;
     }
+}
+
+.buffer {
+    width: 100%;
+    height: 10px;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    background-color: var(--errorRed);
 }
