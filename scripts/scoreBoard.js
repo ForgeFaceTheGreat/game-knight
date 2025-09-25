@@ -21,7 +21,8 @@ input.addEventListener("keypress", function(pressedKey) {
         document.getElementById("addButton").click();
     }
 });
-        
+
+// Adds players
 document.getElementById("addButton").onclick = function() {
     let playerIDElement = document.getElementById("playerNameInput");
     let playerName = document.getElementById("playerNameInput").value;
@@ -48,19 +49,22 @@ document.getElementById("addButton").onclick = function() {
     playerIDElement.value = "";
 }
 
-// const scoreButtons = document.querySelectorAll('.scorButton');
-
-// scoreButtons.forEach(scoreQuery => scoreQuery.addEventListener('click', scoreEvent => {
-//     console.log(scoreEvent.target.getAttribute("id"));
-// }));
-
-function changeScore(dig, name) {
-    // alert(dig + " " + `${name}`);
+// Removes Players
+function removePlayer(name) {
     for (let i = 0; i < players.length; i++) {
-        // alert(players[i].score);
+        if (name === players[i].name) {
+            players.splice(i, 1);
+            printAll();
+            return;
+        }
+    }
+}
+
+// Updates the player's score when buttons are pressed
+function changeScore(dig, name) {
+    for (let i = 0; i < players.length; i++) {
         if (name === players[i].name) {
             players[i].score += dig;
-            // alert("asdfaf");
             printAll();
             return;
         }
@@ -74,6 +78,7 @@ function printPlayerCards() {
 
     for (let i = 0; i < players.length; i++) {
         string += "<div class='card'>" +
+            "<button class='removePlayerButton' onclick='removePlayer(`" + players[i].name + "`)'>X</button>" +
             "<div class='num'>" + players[i].score + "</div>" + 
             "<div class='buttons'>" + 
                 "<button class='scoreButton' id='neg' onclick='changeScore(" + -lVal + ", `" + players[i].name + "`)'>" + -lVal + "</button>" +
