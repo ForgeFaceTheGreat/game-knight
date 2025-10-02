@@ -7,9 +7,11 @@ class player {
         this.score = 0;
     }
 }
+// var sNum = document.getElementById('slNum').value;
 
+// var sVal = (!isNaN(sNum)) ? 1 : sNum;
 var sVal = 1;
-var lVal = 5;
+var lVal = 5 || document.getElementById('lgNum');
 
 // Grabs key inputs for the "Enter" key
 var input = document.getElementById("playerNameInput");
@@ -89,6 +91,7 @@ function printPlayerCards() {
             "<div class='cardStock'>" +
                 players[i].name +
             "</div>" +
+            "<br><br><br>" +
         "</div>";
     }
     document.getElementById("cardHolder").innerHTML = string;

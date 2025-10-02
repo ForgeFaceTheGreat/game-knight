@@ -19,7 +19,7 @@ body {
 
 /* Add Player Form */
 #addPlayersForm {
-    #playerNameInput {
+    .input {
         height: 50px;
         font-size: large;
         outline: none;
@@ -27,6 +27,24 @@ body {
         border-radius: 5px;
         background-color: var(--thatGreen);
         color: var(--thatWhite);
+    }
+
+    .num {
+        width: 50px;
+        margin-top: 1%;
+        text-align: center;
+    }
+
+    /* Removes arrow/spinner for number text inputs */
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    input[type=number] {
+        -moz-appearance: textfield;
     }
 
     #addButton {
@@ -104,8 +122,8 @@ table {
 
 /* Player Cards */
 .card {
-    box-shadow: 0 4px 8px 0 var(--shadow);
-    transition: 0.3s;
+    box-shadow: 0 8px 8px 0 var(--shadow);
+    /* transition: 0.3s; */
     border-radius: 5px;
     background-color: var(--thatGreen);
     color: var(--thatYellow);
@@ -212,13 +230,14 @@ table {
 
 @media screen and (max-width: 350px) {
     .card {
-        width: 100%;
+        width: 75%;
+        margin: 1% 12.5%;
     }
 }
 
 .buffer {
     width: 100%;
-    height: 10px;
+    height: 50px;
     position: fixed;
     left: 0;
     bottom: 0;
