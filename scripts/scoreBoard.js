@@ -11,7 +11,7 @@ class player {
 
 // var sVal = (!isNaN(sNum)) ? 1 : sNum;
 var sVal = 1;
-var lVal = 5 || document.getElementById('lgNum');
+var lVal = 5;
 
 // Grabs key inputs for the "Enter" key
 var input = document.getElementById("playerNameInput");
@@ -72,6 +72,20 @@ function changeScore(dig, name) {
         }
     }
     alert("Broken!");
+}
+
+function pontValuesChange(num, id) {
+    if (id === "lgNum") {
+        lVal = num.value;
+    }
+    else if (id === "smNum") {
+        sVal = num.value;
+    }
+    else {
+        alert("Broken Default Point Changer");
+    }
+
+    printAll();
 }
 
 // Displays player cards for manipulating scores
