@@ -74,6 +74,7 @@ function changeScore(dig, name) {
     alert("Broken!");
 }
 
+// Changes the default point increment values
 function pontValuesChange(num, id) {
     if (id === "lgNum") {
         lVal = num.value;
@@ -86,6 +87,13 @@ function pontValuesChange(num, id) {
     }
 
     printAll();
+    golfRules();
+}
+
+const myToggle = document.getElementsByClassName('checkbox');
+
+function golfRules() {
+    alert(myToggle.checked);
 }
 
 // Displays player cards for manipulating scores
@@ -113,12 +121,16 @@ function printPlayerCards() {
 
 // Prints the Players and their scores
 function printScoreBoard() {
-    let string = "<th id='idplayer'>Players</th><th id='idscore'>Score</th>";
+    let string = "";
     
     // Displays player count
-    document.getElementById("numPlayers").innerHTML = players.length + " Player";
+    document.getElementById("numPlayers").innerHTML = players.length + " Player" + (players.length > 1 ? "s" : "");
     
     for (let i = 0; i < players.length; i++) {
+        if (i == 0) {
+            string = "<th id='idplayer'>Players</th><th id='idscore'>Score</th>";
+        }
+
         string += "<tr><td id='idplayer'>" + players[i].name + "</td><td id='idscore'>" + players[i].score + "</td></tr>";
     }
     document.getElementById("playerList").innerHTML = string;
